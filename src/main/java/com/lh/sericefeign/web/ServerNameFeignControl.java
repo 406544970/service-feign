@@ -15,16 +15,16 @@ public class ServerNameFeignControl {
         return serverNameFeignInterface.myVersion();
     }
 
-    @PostMapping(value = "isGetFeign")
+    @PostMapping(value = "/isGetFeign")
     public boolean isGet(){
         return serverNameFeignInterface.isGet();
     }
 
-    @PostMapping(value = "hello2Feign")
+    @PostMapping(value = "/hello2Feign")
     public String hello2(@RequestParam(value = "index",defaultValue = "2") int index){
         return serverNameFeignInterface.hello2(index);
     }
-    @PostMapping(value = "myPortFeign")
+    @PostMapping(value = "/myPortFeign")
     public String myPort(){
         return serverNameFeignInterface.myHello();
     }
