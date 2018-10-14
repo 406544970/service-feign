@@ -10,12 +10,12 @@ public interface ServerNameFeignInterface {
     @PostMapping(value = "/myVersion")
     String myVersion();
 
-    @GetMapping(value = "isGet")
+    @GetMapping(value = "/isGet")
     boolean isGet();
 
-    @PostMapping(value = "hello2")
+    @PostMapping(value = "/hello2")
     String hello2(@RequestParam(value = "index",defaultValue = "2") int index);
 
-    @PostMapping(value = "myHello")
+    @PostMapping(value = "/myHello")
     String myHello();
 }
