@@ -18,6 +18,6 @@ public interface ServerNameFeignInterface {
     @PostMapping(value = "/hello2")
     String hello2(@RequestParam(value = "index",defaultValue = "2") int index);
 
-    @PostMapping(value = "/myHello")
-    String myHello();
+    @PostMapping(value = "/myPort")
+    String myPort();
 }

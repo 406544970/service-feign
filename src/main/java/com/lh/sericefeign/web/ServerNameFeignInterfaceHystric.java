@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class ServerNameFeignInterfaceHystric implements ServerNameFeignInterface{
     @Override
-    public String myHello() {
+    public String myPort() {
         return "sorry port is error.";
     }
 
@@ -23,6 +23,7 @@ public class ServerNameFeignInterfaceHystric implements ServerNameFeignInterface
     public String hello2(int index) {
         return null;
     }
+
 }
 
 

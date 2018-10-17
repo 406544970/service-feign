@@ -1,31 +1,41 @@
 package com.lh.sericefeign.web;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.web.bind.annotation.*;
+
+import static com.netflix.discovery.DiscoveryManager.getInstance;
 
 @RestController
 public class ServerNameFeignControl {
+
+    @Value("${server.port}")
+    String mySelfPort;
+
     @Autowired
     ServerNameFeignInterface serverNameFeignInterface;
 
-    @PostMapping(value = "/myVersionFeign")
+    @PostMapping(value = "/myVersion")
     public String myVersion() {
-        return serverNameFeignInterface.myVersion();
+        return "Feign:" + serverNameFeignInterface.myVersion();
     }
 
-    @PostMapping(value = "/isGetFeign")
+    @PostMapping(value = "/isGet")
     public boolean isGet(){
         return serverNameFeignInterface.isGet();
     }
 
-    @PostMapping(value = "/hello2Feign")
+    @PostMapping(value = "/hello2")
     public String hello2(@RequestParam(value = "index",defaultValue = "2") int index){
-        return serverNameFeignInterface.hello2(index);
+        return "Feign:" + serverNameFeignInterface.hello2(index);
     }
-    @PostMapping(value = "/myPortFeign")
+    @PostMapping(value = "/myPort")
     public String myPort(){
-        return serverNameFeignInterface.myHello();
+        return "Feign:" + this.mySelfPort + ",Server-name:" + serverNameFeignInterface.myPort();
+    }
+
+    @GetMapping(value = "/downLine")
+    public void downLine(){
+        getInstance().shutdownComponent();
     }
 }
