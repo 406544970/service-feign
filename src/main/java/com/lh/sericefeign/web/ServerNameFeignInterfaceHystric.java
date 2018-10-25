@@ -3,7 +3,7 @@ package com.lh.sericefeign.web;
 import org.springframework.stereotype.Service;
 
 @Service
-public class ServerNameFeignInterfaceHystric implements ServerNameFeignInterface{
+public class ServerNameFeignInterfaceHystric implements ServerNameFeignInterface {
     @Override
     public String myPort() {
         return "sorry port is error.";

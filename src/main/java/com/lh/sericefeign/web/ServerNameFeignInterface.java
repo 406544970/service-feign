@@ -6,8 +6,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+
 @Repository
-@FeignClient(value = "Server-name",fallback = ServerNameFeignInterfaceHystric.class)
+@FeignClient(value = "dictionary-mucon",fallback = ServerNameFeignInterfaceHystric.class)
 public interface ServerNameFeignInterface {
     @PostMapping(value = "/myVersion")
     String myVersion();
