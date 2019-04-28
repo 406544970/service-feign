@@ -26,6 +26,14 @@
 	</properties>
 
 	<dependencies>
+		<!--返回结构体-->
+		<dependency>
+			<groupId>resultVO</groupId>
+			<artifactId>resultVO</artifactId>
+			<version>1.0</version>
+			<scope>system</scope>
+			<systemPath>${basedir}/lib/resultVO.jar</systemPath>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
@@ -66,6 +74,16 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<executions>
+					<execution>
+						<goals>
+							<goal>repackage</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<includeSystemScope>true</includeSystemScope>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>

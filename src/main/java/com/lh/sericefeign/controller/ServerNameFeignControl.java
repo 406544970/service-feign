@@ -1,5 +1,9 @@
-package com.lh.sericefeign.web;
+package com.lh.sericefeign.controller;
 
+import com.lh.VO.ResultVO;
+import com.lh.sericefeign.FeignInterface.AuthorityFeignInterface;
+import com.lh.sericefeign.FeignInterface.ServerNameFeignInterface;
+import com.lh.utils.ResultUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
@@ -14,6 +18,15 @@ public class ServerNameFeignControl {
 
     @Autowired
     ServerNameFeignInterface serverNameFeignInterface;
+
+    @Autowired
+    AuthorityFeignInterface authorityFeignInterface;
+
+    @PostMapping(value = "/useLog")
+    public ResultVO useLog(@RequestParam(value = "num") String num
+            , @RequestParam(value = "passWord") String passWord) {
+        return authorityFeignInterface.useLog(num, passWord);
+    }
 
     @PostMapping(value = "/myVersion")
     public String myVersion() {

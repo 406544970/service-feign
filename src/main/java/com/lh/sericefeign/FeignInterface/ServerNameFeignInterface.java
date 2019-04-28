@@ -1,5 +1,6 @@
-package com.lh.sericefeign.web;
+package com.lh.sericefeign.FeignInterface;
 
+import com.lh.sericefeign.FeignInterface.Hystric.ServerNameFeignInterfaceHystric;
 import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.stereotype.Repository;
 import org.springframework.web.bind.annotation.GetMapping;

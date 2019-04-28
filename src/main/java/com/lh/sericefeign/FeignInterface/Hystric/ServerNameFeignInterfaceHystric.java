@@ -1,5 +1,6 @@
-package com.lh.sericefeign.web;
+package com.lh.sericefeign.FeignInterface.Hystric;
 
+import com.lh.sericefeign.FeignInterface.ServerNameFeignInterface;
 import org.springframework.stereotype.Service;
 
 @Service
