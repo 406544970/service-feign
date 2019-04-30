@@ -11,4 +11,9 @@ public class AuthorityFeignInterfaceHystric implements AuthorityFeignInterface {
     public ResultVO useLog(String num, String passWord) {
         return ResultUtils.error();
     }
+
+    @Override
+    public ResultVO selectMySystemNameList(String id) {
+        return ResultUtils.error();
+    }
 }

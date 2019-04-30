@@ -1,6 +1,7 @@
 package com.lh.sericefeign.FeignInterface;
 
 import com.lh.sericefeign.FeignInterface.Hystric.ServerNameFeignInterfaceHystric;
+import com.lh.sericefeign.config.FeignConfigure;
 import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.stereotype.Repository;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -9,7 +10,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 
 @Repository
-@FeignClient(value = "dictionary-mucon",fallback = ServerNameFeignInterfaceHystric.class)
+@FeignClient(value = "dictionary-mucon",fallback = ServerNameFeignInterfaceHystric.class
+,configuration = FeignConfigure.class)
 public interface ServerNameFeignInterface {
     @PostMapping(value = "/myVersion")
     String myVersion();

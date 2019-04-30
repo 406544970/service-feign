@@ -28,6 +28,11 @@ public class ServerNameFeignControl {
         return authorityFeignInterface.useLog(num, passWord);
     }
 
+    @PostMapping("/selectMySystemNameList")
+    public ResultVO selectMySystemNameList(@RequestParam(value = "id") String id){
+        return authorityFeignInterface.selectMySystemNameList(id);
+    }
+
     @PostMapping(value = "/myVersion")
     public String myVersion() {
         return "Feign:" + serverNameFeignInterface.myVersion();
