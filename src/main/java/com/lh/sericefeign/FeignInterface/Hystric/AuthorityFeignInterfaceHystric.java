@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class AuthorityFeignInterfaceHystric implements AuthorityFeignInterface {
     @Override
-    public ResultVO useLog(String num, String passWord) {
+    public ResultVO useLogOfManagerInBS(String num, String passWord) {
         return ResultUtils.error();
     }
 

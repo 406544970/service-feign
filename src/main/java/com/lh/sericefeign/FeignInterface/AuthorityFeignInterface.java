@@ -15,8 +15,8 @@ import java.util.List;
 @FeignClient(value = "authority-mucon/authority",fallback = AuthorityFeignInterfaceHystric.class
 ,configuration = FeignConfigure.class)
 public interface AuthorityFeignInterface {
-    @PostMapping(value = "/useLog")
-    ResultVO useLog(@RequestParam(value = "num") String num
+    @PostMapping(value = "/useLogOfManagerInBS")
+    ResultVO useLogOfManagerInBS(@RequestParam(value = "num") String num
             , @RequestParam(value = "passWord") String passWord);
 
     @PostMapping("/selectMySystemNameList")
