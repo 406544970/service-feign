@@ -22,10 +22,10 @@ public class ServerNameFeignControl {
     @Autowired
     AuthorityFeignInterface authorityFeignInterface;
 
-    @PostMapping(value = "/useLog")
-    public ResultVO useLog(@RequestParam(value = "num") String num
+    @PostMapping(value = "/useLogOfManagerInBS")
+    public ResultVO useLogOfManagerInBS(@RequestParam(value = "num") String num
             , @RequestParam(value = "passWord") String passWord) {
-        return authorityFeignInterface.useLog(num, passWord);
+        return authorityFeignInterface.useLogOfManagerInBS(num, passWord);
     }
 
     @PostMapping("/selectMySystemNameList")
