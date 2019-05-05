@@ -15,15 +15,15 @@ public class ServerNameFeignInterfaceHystric implements ServerNameFeignInterface
         return "sorry version is error.";
     }
 
-    @Override
-    public boolean isGet() {
-        return false;
-    }
-
-    @Override
-    public String hello2(int index) {
-        return null;
-    }
+//    @Override
+//    public boolean isGet() {
+//        return false;
+//    }
+//
+//    @Override
+//    public String hello2(int index) {
+//        return null;
+//    }
 
 }
 

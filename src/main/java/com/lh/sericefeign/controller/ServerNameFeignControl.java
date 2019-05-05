@@ -38,15 +38,15 @@ public class ServerNameFeignControl {
         return "Feign:" + serverNameFeignInterface.myVersion();
     }
 
-    @PostMapping(value = "/isGet")
-    public boolean isGet(){
-        return serverNameFeignInterface.isGet();
-    }
-
-    @PostMapping(value = "/hello2")
-    public String hello2(@RequestParam(value = "index",defaultValue = "2") int index){
-        return "Feign:" + serverNameFeignInterface.hello2(index);
-    }
+//    @PostMapping(value = "/isGet")
+//    public boolean isGet(){
+//        return serverNameFeignInterface.isGet();
+//    }
+//
+//    @PostMapping(value = "/hello2")
+//    public String hello2(@RequestParam(value = "index",defaultValue = "2") int index){
+//        return "Feign:" + serverNameFeignInterface.hello2(index);
+//    }
     @PostMapping(value = "/myPort")
     public String myPort(){
         return "Feign:" + this.mySelfPort + ",Server-name:" + serverNameFeignInterface.myPort();
