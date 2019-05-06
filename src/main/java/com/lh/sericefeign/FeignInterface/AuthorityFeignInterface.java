@@ -2,18 +2,13 @@ package com.lh.sericefeign.FeignInterface;
 
 import com.lh.VO.ResultVO;
 import com.lh.sericefeign.FeignInterface.Hystric.AuthorityFeignInterfaceHystric;
-import com.lh.sericefeign.config.FeignConfigure;
-import com.lh.utils.ResultUtils;
 import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.stereotype.Repository;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import java.util.List;
-
 @Repository
-@FeignClient(value = "authority-mucon/authority",fallback = AuthorityFeignInterfaceHystric.class
-,configuration = FeignConfigure.class)
+@FeignClient(value = "authority-mucon/authority", fallback = AuthorityFeignInterfaceHystric.class)
 public interface AuthorityFeignInterface {
     @PostMapping(value = "/useLogOfManagerInBS")
     ResultVO useLogOfManagerInBS(@RequestParam(value = "num") String num
