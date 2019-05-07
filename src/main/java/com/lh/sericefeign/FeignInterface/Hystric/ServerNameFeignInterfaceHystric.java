@@ -11,6 +11,11 @@ public class ServerNameFeignInterfaceHystric implements ServerNameFeignInterface
     }
 
     @Override
+    public String testTimeOut(long timeOut) {
+        return "sorry, already time out.";
+    }
+
+    @Override
     public String myVersion() {
         return "sorry version is error.";
     }

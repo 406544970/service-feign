@@ -27,6 +27,11 @@ public class ServerNameFeignControl {
     @Autowired
     AuthorityFeignInterface authorityFeignInterface;
 
+    @PostMapping("/testTimeOut")
+    public String testTimeOut(@RequestParam(value = "timeOut") long timeOut) {
+        return serverNameFeignInterface.testTimeOut(timeOut);
+    }
+
     @PostMapping(value = "/useLogOfManagerInBS")
     public ResultVO useLogOfManagerInBS(@RequestParam(value = "num") String num
             , @RequestParam(value = "passWord") String passWord) {

@@ -6,10 +6,11 @@ import feign.Retryer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-@Configuration
+//@Configuration
 public class FeignConfigure {
-    public static int connectTimeOutMillis = 12000;//超时时间
-    public static int readTimeOutMillis = 12000;
+    public static int connectTimeOutMillis = 3000;//连接服务端超时时间，连接器时间，3000即3秒;
+    public static int readTimeOutMillis = 5000;//服务端响应超时时间，即断路器时间
+    //说明：连接器时间不可大于断路器时间
     @Bean
     public Request.Options options() {
         return new Request.Options(connectTimeOutMillis, readTimeOutMillis);
