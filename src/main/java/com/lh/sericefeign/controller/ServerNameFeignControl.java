@@ -118,7 +118,8 @@ public class ServerNameFeignControl {
     @PostMapping("/useLogByNameAndPassWord")
     public ResultVO useLogByNameAndPassWord(@RequestParam(value = "mobile") String mobile
             , @RequestParam(value = "passWord") String passWord) {
-        return useControllerInterface.useLogByNameAndPassWord(mobile, passWord);
+        ResultVO resultVO = useControllerInterface.useLogByNameAndPassWord(mobile, passWord);
+        return resultVO;
     }
 
     /**
@@ -136,7 +137,8 @@ public class ServerNameFeignControl {
     @PostMapping("/useLogByNameAndPassWordCS")
     public ResultVO useLogByNameAndPassWordCS(@RequestParam(value = "mobile") String mobile
             , @RequestParam(value = "passWord") String passWord) {
-        return useControllerInterface.useLogByNameAndPassWordCS(mobile, passWord);
+        ResultVO resultVO = useControllerInterface.useLogByNameAndPassWordCS(mobile, passWord);
+        return resultVO;
     }
 
 }
