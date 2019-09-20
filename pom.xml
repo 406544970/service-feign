@@ -28,11 +28,11 @@
 	<dependencies>
 		<!--返回结构体-->
 		<dependency>
-			<groupId>resultVO</groupId>
-			<artifactId>resultVO</artifactId>
+			<groupId>ToolJar</groupId>
+			<artifactId>ToolJar</artifactId>
 			<version>1.0</version>
 			<scope>system</scope>
-			<systemPath>${basedir}/lib/resultVO.jar</systemPath>
+			<systemPath>${basedir}/lib/ToolJar.jar</systemPath>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -62,9 +62,25 @@
 			<version>2.1.0</version>
 		</dependency>
 		<!--服务跟踪-->
+		<!--<dependency>-->
+			<!--<groupId>org.springframework.cloud</groupId>-->
+			<!--<artifactId>spring-cloud-starter-zipkin</artifactId>-->
+		<!--</dependency>-->
+		<!--swagger-->
 		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-zipkin</artifactId>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>20.0</version>
+		</dependency>
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger2</artifactId>
+			<version>2.9.2</version>
+		</dependency>
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger-ui</artifactId>
+			<version>2.9.2</version>
 		</dependency>
 	</dependencies>
 

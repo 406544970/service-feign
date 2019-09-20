@@ -1,7 +1,7 @@
 package com.lh.sericefeign.FeignInterface;
 
-import com.lh.VO.ResultVO;
 import com.lh.sericefeign.FeignInterface.Hystric.AuthorityFeignInterfaceHystric;
+import lh.model.ResultVO;
 import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.stereotype.Repository;
 import org.springframework.web.bind.annotation.PostMapping;
