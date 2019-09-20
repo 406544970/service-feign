@@ -1,9 +1,6 @@
-package com.lh.sericefeign.FeignInterface.Hystric;
+package com.lh.sericefeign.feignInterface.hystric;
 
-import com.lh.sericefeign.FeignInterface.UseControllerInterface;
-import io.swagger.annotations.ApiImplicitParam;
-import io.swagger.annotations.ApiImplicitParams;
-import io.swagger.annotations.ApiOperation;
+import com.lh.sericefeign.feignInterface.UseControllerInterface;
 import lh.model.ResultVO;
 import lh.units.ResultStruct;
 import org.springframework.stereotype.Service;

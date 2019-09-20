@@ -1,9 +1,9 @@
 package com.lh.sericefeign.controller;
 
-import com.lh.sericefeign.FeignInterface.AuthorityFeignInterface;
-import com.lh.sericefeign.FeignInterface.PerControllerFeignInterface;
-import com.lh.sericefeign.FeignInterface.ServerNameFeignInterface;
-import com.lh.sericefeign.FeignInterface.UseControllerInterface;
+import com.lh.sericefeign.feignInterface.AuthorityFeignInterface;
+import com.lh.sericefeign.feignInterface.PerControllerFeignInterface;
+import com.lh.sericefeign.feignInterface.ServerNameFeignInterface;
+import com.lh.sericefeign.feignInterface.UseControllerInterface;
 import io.jmnarloch.spring.cloud.ribbon.support.RibbonFilterContextHolder;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;

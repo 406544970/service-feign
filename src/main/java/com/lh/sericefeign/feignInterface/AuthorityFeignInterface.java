@@ -1,6 +1,6 @@
-package com.lh.sericefeign.FeignInterface;
+package com.lh.sericefeign.feignInterface;
 
-import com.lh.sericefeign.FeignInterface.Hystric.AuthorityFeignInterfaceHystric;
+import com.lh.sericefeign.feignInterface.hystric.AuthorityFeignInterfaceHystric;
 import lh.model.ResultVO;
 import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.stereotype.Repository;

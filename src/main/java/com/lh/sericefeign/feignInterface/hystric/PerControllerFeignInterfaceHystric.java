@@ -1,6 +1,6 @@
-package com.lh.sericefeign.FeignInterface.Hystric;
+package com.lh.sericefeign.feignInterface.hystric;
 
-import com.lh.sericefeign.FeignInterface.PerControllerFeignInterface;
+import com.lh.sericefeign.feignInterface.PerControllerFeignInterface;
 import org.springframework.stereotype.Service;
 
 /**

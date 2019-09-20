@@ -1,7 +1,6 @@
-package com.lh.sericefeign.FeignInterface;
+package com.lh.sericefeign.feignInterface;
 
-import com.lh.sericefeign.FeignInterface.Hystric.AuthorityFeignInterfaceHystric;
-import com.lh.sericefeign.FeignInterface.Hystric.PerControllerFeignInterfaceHystric;
+import com.lh.sericefeign.feignInterface.hystric.PerControllerFeignInterfaceHystric;
 import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.stereotype.Repository;
 import org.springframework.web.bind.annotation.PostMapping;

@@ -1,6 +1,6 @@
-package com.lh.sericefeign.FeignInterface.Hystric;
+package com.lh.sericefeign.feignInterface.hystric;
 
-import com.lh.sericefeign.FeignInterface.AuthorityFeignInterface;
+import com.lh.sericefeign.feignInterface.AuthorityFeignInterface;
 import lh.model.ResultVO;
 import lh.units.ResultStruct;
 import org.springframework.stereotype.Service;
