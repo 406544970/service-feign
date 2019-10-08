@@ -17,11 +17,11 @@ public class UseControllerInterfaceHystric implements UseControllerInterface {
     @Override
     public ResultVO useLogByNameAndPassWord(@RequestParam(value = "mobile") String mobile
             , @RequestParam(value = "passWord") String passWord) {
-        return ResultStruct.error(hystricMessage, ResultVO.class);
+        return ResultStruct.error(hystricMessage, ResultVO.class,null);
     }
 
     @Override
     public ResultVO useLogByNameAndPassWordCS(String mobile, String passWord) {
-        return ResultStruct.error(hystricMessage, ResultVO.class);
+        return ResultStruct.error(hystricMessage, ResultVO.class,null);
     }
 }

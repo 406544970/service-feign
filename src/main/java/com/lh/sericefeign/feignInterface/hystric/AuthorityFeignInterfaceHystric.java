@@ -9,11 +9,11 @@ import org.springframework.stereotype.Service;
 public class AuthorityFeignInterfaceHystric implements AuthorityFeignInterface {
     @Override
     public ResultVO useLogOfManagerInBS(String num, String passWord) {
-        return ResultStruct.error("失败！",ResultVO.class);
+        return ResultStruct.error("失败！",ResultVO.class,null);
     }
 
     @Override
     public ResultVO selectMySystemNameList(String id) {
-        return ResultStruct.error("失败！",ResultVO.class);
+        return ResultStruct.error("失败！",ResultVO.class,null);
     }
 }
