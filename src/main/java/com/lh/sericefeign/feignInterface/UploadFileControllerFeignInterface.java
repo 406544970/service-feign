@@ -1,6 +1,7 @@
 package com.lh.sericefeign.feignInterface;
 
 import com.lh.sericefeign.feignInterface.hystric.PageControllerFeignInterfaceHystric;
+import com.lh.sericefeign.feignInterface.hystric.UploadFileControllerFeignInterfaceHystric;
 import lh.model.ResultVO;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.stereotype.Repository;
@@ -16,7 +17,7 @@ import java.io.IOException;
  * @editLog
  */
 @Repository
-@FeignClient(value = "dictionary-mucon/UploadFileController", fallback = PageControllerFeignInterfaceHystric.class)
+@FeignClient(value = "AUTHORITY-MUCON/UploadFileController", fallback = UploadFileControllerFeignInterfaceHystric.class)
 public interface UploadFileControllerFeignInterface {
     @PostMapping(value = "/uploadFile")
     ResultVO uploadFile(@RequestBody byte[] fileStreamArray

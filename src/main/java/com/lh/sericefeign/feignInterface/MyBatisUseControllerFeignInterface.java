@@ -15,7 +15,7 @@ import java.util.*;
  * @editLog
  */
 @Repository
-@FeignClient(value = "dictionary-mucon/myBatisUseController", fallback = MyBatisUseControllerFeignInterfaceHystric.class)
+@FeignClient(value = "AUTHORITY-MUCON/myBatisUseController", fallback = MyBatisUseControllerFeignInterfaceHystric.class)
 public interface MyBatisUseControllerFeignInterface {
     @PostMapping("/selectUseCreateNickNameList")
     List<String> selectUseCreateNickNameList();

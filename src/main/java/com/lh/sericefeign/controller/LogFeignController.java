@@ -1,6 +1,7 @@
 package com.lh.sericefeign.controller;
 
 import com.lh.sericefeign.feignInterface.MyBatisUseControllerFeignInterface;
+import com.lh.sericefeign.feignInterface.hystric.MyBatisUseControllerFeignInterfaceHystric;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;

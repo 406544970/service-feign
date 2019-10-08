@@ -1,9 +1,9 @@
 package com.lh.sericefeign.controller;
 
+import com.lh.sericefeign.feignInterface.DictionaryControllerFeignInterface;
 import com.lh.sericefeign.feignInterface.MyBatisUseControllerFeignInterface;
 import com.lh.sericefeign.feignInterface.PageControllerFeignInterface;
-import com.lh.sericefeign.feignInterface.hystric.DictionaryControllerFeignInterfaceHystric;
-import com.lh.sericefeign.feignInterface.hystric.UploadFileControllerFeignInterfaceHystric;
+import com.lh.sericefeign.feignInterface.UploadFileControllerFeignInterface;
 import com.lh.sericefeign.model.DictionaryModel;
 import com.lh.sericefeign.model.InPutParam.PageVersionListInParam;
 import io.swagger.annotations.*;
@@ -26,13 +26,13 @@ import java.util.*;
 @Api(value = "综合层", description = "用户、权限、页面控制层")
 public class UseAuthorityPageFeignController {
     @Autowired
-    DictionaryControllerFeignInterfaceHystric dictionaryControllerFeignInterfaceHystric;
+    DictionaryControllerFeignInterface dictionaryControllerFeignInterface;
     @Autowired
     MyBatisUseControllerFeignInterface myBatisUseControllerFeignInterface;
     @Autowired
     PageControllerFeignInterface pageControllerFeignInterface;
     @Autowired
-    UploadFileControllerFeignInterfaceHystric uploadFileControllerFeignInterfaceHystric;
+    UploadFileControllerFeignInterface uploadFileControllerFeignInterface;
 
 
     /**
@@ -47,7 +47,7 @@ public class UseAuthorityPageFeignController {
     })
     @PostMapping("/selectDictionaryListString")
     public List<String> selectDictionaryListString(@RequestParam(value = "signName") String signName) {
-        List<DictionaryModel> dictionaryModels = dictionaryControllerFeignInterfaceHystric.selectDictionaryList(signName);
+        List<DictionaryModel> dictionaryModels = dictionaryControllerFeignInterface.selectDictionaryList(signName);
         List<String> list = new ArrayList<>();
         if (dictionaryModels != null) {
             for (DictionaryModel dictionaryModel :
@@ -71,7 +71,7 @@ public class UseAuthorityPageFeignController {
     })
     @PostMapping("/selectDictionaryList")
     public List<DictionaryModel> selectDictionaryList(@RequestParam(value = "signName") String signName) {
-        return dictionaryControllerFeignInterfaceHystric.selectDictionaryList(signName);
+        return dictionaryControllerFeignInterface.selectDictionaryList(signName);
     }
 
     /**
@@ -92,7 +92,7 @@ public class UseAuthorityPageFeignController {
     public ResultVOPage selectDictionaryListPage(@RequestParam(value = "signName") String signName
             , @RequestParam(value = "page", defaultValue = "1") int page
             , @RequestParam(value = "limit", defaultValue = "10") int limit) {
-        return dictionaryControllerFeignInterfaceHystric.selectDictionaryListPage(signName, page, limit);
+        return dictionaryControllerFeignInterface.selectDictionaryListPage(signName, page, limit);
     }
 
     /**
@@ -115,7 +115,7 @@ public class UseAuthorityPageFeignController {
             , @RequestParam(value = "signName") String signName
             , @RequestParam(value = "sortNo") int sortNo
             , @RequestParam(value = "remark", required = false) String remark) {
-        return dictionaryControllerFeignInterfaceHystric.insertDictionary(contentName, signName, sortNo, remark);
+        return dictionaryControllerFeignInterface.insertDictionary(contentName, signName, sortNo, remark);
     }
 
     /**
@@ -148,7 +148,7 @@ public class UseAuthorityPageFeignController {
             , @RequestParam(value = "sortNo", required = false) int sortNo
             , @RequestParam(value = "stopSign", required = false) boolean stopSign
             , @RequestParam(value = "remark", required = false) String remark) {
-        return dictionaryControllerFeignInterfaceHystric.updateDictionaryByAll(id, idWhere, signNameWhere, defaultSelect, sortNo, stopSign, remark);
+        return dictionaryControllerFeignInterface.updateDictionaryByAll(id, idWhere, signNameWhere, defaultSelect, sortNo, stopSign, remark);
     }
 
     /**
@@ -169,7 +169,7 @@ public class UseAuthorityPageFeignController {
     public ResultVO updateDictionaryOfStopSign(@RequestParam(value = "idWhere") String idWhere
             , @RequestParam(value = "signNameWhere") String signNameWhere
             , @RequestParam(value = "stopSign") boolean stopSign) {
-        return dictionaryControllerFeignInterfaceHystric.updateDictionaryOfStopSign(idWhere, signNameWhere, stopSign);
+        return dictionaryControllerFeignInterface.updateDictionaryOfStopSign(idWhere, signNameWhere, stopSign);
     }
 
     /**
@@ -187,7 +187,7 @@ public class UseAuthorityPageFeignController {
     @PostMapping("/deleteDictionaryBySignAndId")
     public int deleteDictionaryBySignAndId(@RequestParam(value = "id", required = false) String id
             , @RequestParam(value = "signName", required = false) String signName) {
-        return dictionaryControllerFeignInterfaceHystric.deleteDictionaryBySignAndId(id, signName);
+        return dictionaryControllerFeignInterface.deleteDictionaryBySignAndId(id, signName);
     }
 
     /**
@@ -202,7 +202,7 @@ public class UseAuthorityPageFeignController {
     })
     @PostMapping("/selectSignById")
     public ResultVO selectSignById(@RequestParam(value = "id") String id) {
-        return dictionaryControllerFeignInterfaceHystric.selectSignById(id);
+        return dictionaryControllerFeignInterface.selectSignById(id);
     }
 
     /**
@@ -419,7 +419,7 @@ public class UseAuthorityPageFeignController {
     public ResultVO uploadFile(@RequestBody byte[] fileStreamArray
             , @RequestParam(value = "dictionary") String dictionary
             , @RequestParam(value = "fileName") String fileName) throws IOException {
-        return uploadFileControllerFeignInterfaceHystric.uploadFile(fileStreamArray, dictionary, fileName);
+        return uploadFileControllerFeignInterface.uploadFile(fileStreamArray, dictionary, fileName);
     }
 
     /**
@@ -435,7 +435,7 @@ public class UseAuthorityPageFeignController {
     @PostMapping(value = "/uploadFileSelect")
     public ResultVO uploadFileSelect(@RequestBody byte[] fileStreamArray
             , @RequestParam(value = "fileName") String fileName) throws IOException {
-        return uploadFileControllerFeignInterfaceHystric.uploadFileSelect(fileStreamArray, fileName);
+        return uploadFileControllerFeignInterface.uploadFileSelect(fileStreamArray, fileName);
     }
 
     /**
@@ -451,7 +451,7 @@ public class UseAuthorityPageFeignController {
     @PostMapping(value = "/uploadFileUpdate")
     public ResultVO uploadFileUpdate(@RequestBody byte[] fileStreamArray
             , @RequestParam(value = "fileName") String fileName) throws IOException {
-        return uploadFileControllerFeignInterfaceHystric.uploadFileUpdate(fileStreamArray, fileName);
+        return uploadFileControllerFeignInterface.uploadFileUpdate(fileStreamArray, fileName);
     }
 
     /**
@@ -467,7 +467,7 @@ public class UseAuthorityPageFeignController {
     @PostMapping(value = "/uploadFileInsert")
     public ResultVO uploadFileInsert(@RequestBody byte[] fileStreamArray
             , @RequestParam(value = "fileName") String fileName) throws IOException {
-        return uploadFileControllerFeignInterfaceHystric.uploadFileInsert(fileStreamArray, fileName);
+        return uploadFileControllerFeignInterface.uploadFileInsert(fileStreamArray, fileName);
     }
 
     /**
@@ -483,7 +483,7 @@ public class UseAuthorityPageFeignController {
     @PostMapping(value = "/uploadFileDelete")
     public ResultVO uploadFileDelete(@RequestBody byte[] fileStreamArray
             , @RequestParam(value = "fileName") String fileName) throws IOException {
-        return uploadFileControllerFeignInterfaceHystric.uploadFileDelete(fileStreamArray, fileName);
+        return uploadFileControllerFeignInterface.uploadFileDelete(fileStreamArray, fileName);
     }
 
     /**
@@ -500,6 +500,6 @@ public class UseAuthorityPageFeignController {
     @PostMapping(value = "/downLoadFile")
     public byte[] downLoadFile(@RequestParam(value = "dictionary") String dictionary
             , @RequestParam(value = "fileName") String fileName) throws IOException {
-        return uploadFileControllerFeignInterfaceHystric.downLoadFile(dictionary, fileName);
+        return uploadFileControllerFeignInterface.downLoadFile(dictionary, fileName);
     }
 }

@@ -8,8 +8,10 @@ import org.springframework.stereotype.Service;
 import java.io.IOException;
 
 /**
- * @author 姊佹槉
- * @date:2019/10/8
+ * @author ：flyman，后端工程师：flyman2，前端工程师：flyman3
+ * @create 2019-10-08 12:03
+ * @function
+ * @editLog
  */
 @Service
 public class UploadFileControllerFeignInterfaceHystric implements UploadFileControllerFeignInterface {
