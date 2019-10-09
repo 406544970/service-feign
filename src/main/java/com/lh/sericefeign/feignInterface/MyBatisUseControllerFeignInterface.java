@@ -6,6 +6,7 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.stereotype.Repository;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+
 import java.util.*;
 
 /**
@@ -32,4 +33,9 @@ public interface MyBatisUseControllerFeignInterface {
     @PostMapping("/useLogCS")
     ResultVO useLogCS(@RequestParam(value = "num") String num
             , @RequestParam(value = "passWord") String passWord);
+
+    @PostMapping("/updatePassWord")
+    int updatePassWord(@RequestParam(value = "useId") String useId
+            , @RequestParam(value = "passWord") String passWord);
+
 }

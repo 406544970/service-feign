@@ -38,4 +38,9 @@ public class MyBatisUseControllerFeignInterfaceHystric implements MyBatisUseCont
     public ResultVO useLogCS(String num, String passWord) {
         return ResultStruct.error(hystricMessage, ResultVO.class,null);
     }
+
+    @Override
+    public int updatePassWord(String useId, String passWord) {
+        return 0;
+    }
 }
