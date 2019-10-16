@@ -35,6 +35,21 @@ public class UseAuthorityPageFeignController {
     UploadFileControllerFeignInterface uploadFileControllerFeignInterface;
 
     /**
+     * 下载所有字典，方法ID：SE201910161906126742E4B9D0FDC74
+     *
+     * @return 所有字典
+     */
+    @ApiOperation(value = "下载所有字典", notes = "所有字典")
+    @PostMapping("/downIniDictionary")
+    public ResultVO downIniDictionary() {
+        ResultVO resultValue = dictionaryControllerFeignInterface. downIniDictionary();
+
+        return resultValue;
+    }
+
+
+
+    /**
      * 下载该公司所有用户，方法ID：SE20191016105539222638FC00D5754
      *
      * @param companyName 表sys_useInfo,字段名companyName:所在公司名称

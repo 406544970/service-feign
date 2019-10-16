@@ -20,6 +20,11 @@ public class DictionaryControllerFeignInterfaceHystric implements DictionaryCont
     private final String hystricMessage = "亲，服务器正忙，请稍后再戳。";
 
     @Override
+    public ResultVO downIniDictionary() {
+        return ResultStruct.error(hystricMessage, ResultVO.class, null);
+    }
+
+    @Override
     public List<String> selectDictionaryListString(String signName) {
         return null;
     }

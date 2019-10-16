@@ -20,6 +20,9 @@ import java.util.List;
 @Repository
 @FeignClient(value = "AUTHORITY-MUCON/dictionaryController", fallback = DictionaryControllerFeignInterfaceHystric.class)
 public interface DictionaryControllerFeignInterface {
+    @PostMapping("/downIniDictionary")
+    ResultVO downIniDictionary();
+
     @PostMapping("/selectDictionaryListString")
     List<String> selectDictionaryListString(@RequestParam(value = "signName") String signName);
 
