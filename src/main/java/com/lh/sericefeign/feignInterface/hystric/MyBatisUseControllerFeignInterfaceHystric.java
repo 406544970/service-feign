@@ -2,8 +2,10 @@ package com.lh.sericefeign.feignInterface.hystric;
 
 import com.lh.sericefeign.feignInterface.MyBatisUseControllerFeignInterface;
 import lh.model.ResultVO;
+import lh.model.ResultVOPage;
 import lh.units.ResultStruct;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -43,4 +45,10 @@ public class MyBatisUseControllerFeignInterfaceHystric implements MyBatisUseCont
     public int updatePassWord(String useId, String passWord) {
         return 0;
     }
+
+    @Override
+    public ResultVO downAllUseByCompany(@RequestParam(value = "companyName") String companyName) {
+        return ResultStruct.error(hystricMessage, ResultVO.class, null);
+    }
+
 }

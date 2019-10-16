@@ -2,6 +2,7 @@ package com.lh.sericefeign.feignInterface;
 
 import com.lh.sericefeign.feignInterface.hystric.MyBatisUseControllerFeignInterfaceHystric;
 import lh.model.ResultVO;
+import lh.model.ResultVOPage;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.stereotype.Repository;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -38,4 +39,6 @@ public interface MyBatisUseControllerFeignInterface {
     int updatePassWord(@RequestParam(value = "useId") String useId
             , @RequestParam(value = "passWord") String passWord);
 
+    @PostMapping("/downAllUseByCompany")
+    ResultVO downAllUseByCompany(@RequestParam(value = "companyName") String companyName);
 }
