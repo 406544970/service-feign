@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
  * @date:2019/9/20
  */
 @Repository
-@FeignClient(value = "authority-mucon/useController", fallback = UseControllerInterfaceHystric.class)
+@FeignClient(value = "mybatisUse-mucon/useController", fallback = UseControllerInterfaceHystric.class)
 public interface UseControllerInterface {
     @PostMapping("/useLogByNameAndPassWord")
     ResultVO useLogByNameAndPassWord(@RequestParam(value = "mobile") String mobile

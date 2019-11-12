@@ -18,7 +18,7 @@ import java.util.Date;
  * @editLog
  */
 @Repository
-@FeignClient(value = "AUTHORITY-MUCON/pageController", fallback = PageControllerFeignInterfaceHystric.class)
+@FeignClient(value = "mybatisUse-mucon/pageController", fallback = PageControllerFeignInterfaceHystric.class)
 public interface PageControllerFeignInterface {
     /**
      * 得到需要更新的版本信息，方法ID：SE2019100218372321158B1B17A5A33

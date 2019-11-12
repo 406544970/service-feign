@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Repository
-@FeignClient(value = "authority-mucon/authority", fallback = AuthorityFeignInterfaceHystric.class)
+@FeignClient(value = "mybatisUse-mucon/authority", fallback = AuthorityFeignInterfaceHystric.class)
 public interface AuthorityFeignInterface {
     @PostMapping(value = "/useLogOfManagerInBS")
     ResultVO useLogOfManagerInBS(@RequestParam(value = "num") String num
