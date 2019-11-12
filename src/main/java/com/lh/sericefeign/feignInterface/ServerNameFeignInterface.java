@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 
 @Repository
-@FeignClient(value = "mybatisUse-mucon/universal", fallback = ServerNameFeignInterfaceHystric.class)
+@FeignClient(value = "MYBATISUSE-MUCON/universal", fallback = ServerNameFeignInterfaceHystric.class)
 public interface ServerNameFeignInterface {
     @PostMapping(value = "/myVersion")
     String myVersion();

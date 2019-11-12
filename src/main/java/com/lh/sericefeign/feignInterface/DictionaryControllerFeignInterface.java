@@ -18,7 +18,7 @@ import java.util.List;
  * @editLog
  */
 @Repository
-@FeignClient(value = "mybatisUse-mucon/dictionaryController", fallback = DictionaryControllerFeignInterfaceHystric.class)
+@FeignClient(value = "MYBATISUSE-MUCON/dictionaryController", fallback = DictionaryControllerFeignInterfaceHystric.class)
 public interface DictionaryControllerFeignInterface {
     @PostMapping("/downIniDictionary")
     ResultVO downIniDictionary();

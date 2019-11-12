@@ -17,7 +17,7 @@ import java.io.IOException;
  * @editLog
  */
 @Repository
-@FeignClient(value = "mybatisUse-mucon/UploadFileController", fallback = UploadFileControllerFeignInterfaceHystric.class)
+@FeignClient(value = "MYBATISUSE-MUCON/UploadFileController", fallback = UploadFileControllerFeignInterfaceHystric.class)
 public interface UploadFileControllerFeignInterface {
     @PostMapping(value = "/uploadFile")
     ResultVO uploadFile(@RequestBody byte[] fileStreamArray

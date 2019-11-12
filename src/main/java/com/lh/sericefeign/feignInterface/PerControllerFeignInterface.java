@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
  * @date:2019/9/20
  */
 @Repository
-@FeignClient(value = "mybatisUse-mucon/perController", fallback = PerControllerFeignInterfaceHystric.class)
+@FeignClient(value = "MYBATISUSE-MUCON/perController", fallback = PerControllerFeignInterfaceHystric.class)
 public interface PerControllerFeignInterface {
     @PostMapping("/insertIntoPerson")
     String insertIntoPerson(@RequestParam(value = "name", required = false) String name
